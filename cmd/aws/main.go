@@ -14,7 +14,7 @@ func main() {
 		Plugins: map[string]goplugin.Plugin{
 			"provider": &plugin.ResourceProviderPlugin{
 				F: func() terraform.ResourceProvider {
-					return wrapper.NewProvider(aws.Provider())
+					return wrapper.NewProvider(aws.Provider(), nil)
 				},
 			},
 			"provisioner": &plugin.ResourceProvisionerPlugin{
